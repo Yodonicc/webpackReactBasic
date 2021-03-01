@@ -48,7 +48,7 @@ function SearchBar(props){
 }
 
 function LineText(props){
-  const listItems = myArray.map((number) =>
+  const listItems = props.myArray.map((number) =>
   <li>{number}</li>
 );
 

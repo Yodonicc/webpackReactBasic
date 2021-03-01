@@ -48,12 +48,23 @@ function SearchBar(props){
 }
 
 function LineText(props){
+  const listItems = myArray.map((number) =>
+  <li>{number}</li>
+);
 
+  return (
+    <li></li>
+  );
 }
 
 function ProductsList(props){
   return (
     <div>
+    <tr>
+      <th><strong>Name</strong></th>
+      <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>    
+      <th><strong>Price</strong></th>
+    </tr>
     <div>
       <strong>Sporting Goods</strong>
     </div>

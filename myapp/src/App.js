@@ -5,6 +5,25 @@ import { useForm } from "react-hook-form";
 
 
 function Window() {
+  var myJSON={
+    // x:1,y:{z:[false,null,""]}  权威指南里JSON语法
+    JSON1:{category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
+    JSON2:{category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
+    JSON3:{category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
+    JSON4:{category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
+    JSON5:{category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
+    JSON6:{category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
+  };
+
+  const myArray=[
+    {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
+    {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
+    {category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
+    {category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
+    {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
+    {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
+  ];
+
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = data => console.log(data);
 
@@ -17,16 +36,33 @@ function Window() {
     <div>
     <SearchBar value={value} onChange={onValueChange}/>
     <input name="example" defaultValue="test" ref={register} />
+    <ProductsList />
     </div>
   );
 }
 
 function SearchBar(props){
   return (
-    // <div>
     <input type="text" value={props.value}/>
-    // <input type="text" />
-    // </div>
+  );
+}
+
+function LineText(props){
+
+}
+
+function ProductsList(props){
+  return (
+    <div>
+    <div>
+      <strong>Sporting Goods</strong>
+    </div>
+    <ul>{LineText}</ul>
+    <div >
+      <strong>Electronics</strong>
+    </div>
+    <ul>{LineText}</ul>
+    </div>
   );
 }
 
